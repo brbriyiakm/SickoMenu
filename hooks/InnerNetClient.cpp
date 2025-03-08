@@ -778,7 +778,7 @@ void dInnerNetClient_Update(InnerNetClient* __this, MethodInfo* method)
                             for (int i = 0; i < (lag ? 169 : 25); ++i) {
                                 auto writer = InnerNetClient_StartRpcImmediately((InnerNetClient*)(*Game::pAmongUsClient), (*Game::pLocalPlayer)->fields._.NetId, 
                                     (uint8_t)RpcCalls__Enum::ProtectPlayer, SendOption__Enum::None, p->fields._.OwnerId, NULL);
-                                MessageWriter_WriteString(writer, convert_to_string("This string is written so that other mods can detect overloading easily."), NULL);
+                                // Removed the string message line
                                 InnerNetClient_FinishRpcImmediately((InnerNetClient*)(*Game::pAmongUsClient), writer, NULL);
                             }
                             count++;
